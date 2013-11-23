@@ -272,6 +272,10 @@ var setupEditor = function( panelid, editorid, data, serverid, editmode ) {
     $("#" + editorid).text( data );
     var editor = ace.edit( editorid );
     editor.setTheme("ace/theme/coder");
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true
+    });
     editor.getSession().setMode(editmode);
     editor.setBehavioursEnabled( false );
     editor.gotoLine(1); 
